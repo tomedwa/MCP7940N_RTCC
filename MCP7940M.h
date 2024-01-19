@@ -11,7 +11,16 @@
  **************************************************************
  * RTC_init() - Initialise the RTC.
  * RTC_set_time() - Set the current time on the RTC.
- * RTC_get_current_time() - Get the current time on the RTC.
+ * RTC_update_current_time() - Get the current time on the RTC.
+ * RTC_get_time_hour_tens_int() - Get hour tens digit as integer.
+ * RTC_get_time_hour_ones_int() - Get hour ones digit as integer.
+ * RTC_get_time_min_tens_int() - Get min tens digit as integer.
+ * RTC_get_time_min_ones_int() - Get min ones digit as integer.
+ * RTC_get_time_sec_tens_int() - Get sec tens digit as integer.
+ * RTC_get_time_sec_ones_int() - Get sec ones digit as integer.
+ * RTC_get_time_hour_string() - Get hour as string.
+ * RTC_get_time_min_string() - Get minute as string.
+ * RTC_get_time_sec_string() - Get seconds as string.
  **************************************************************
 */
 
@@ -34,7 +43,19 @@ uint8_t RTC_read_register(uint8_t regAddr);
 void RTC_read_multiple_register(uint8_t startAddr, uint8_t* data, uint8_t numOfReads);
 void RTC_write_register(uint8_t regAddr, uint8_t data);
 void RTC_set_time(uint8_t hour, uint8_t min, uint8_t sec);
-void RTC_get_current_time();
+void RTC_update_current_time();
+
+uint8_t RTC_get_time_hour_tens_int();
+uint8_t RTC_get_time_hour_ones_int();
+uint8_t RTC_get_time_min_tens_int();
+uint8_t RTC_get_time_min_ones_int();
+uint8_t RTC_get_time_sec_tens_int();
+uint8_t RTC_get_time_sec_ones_int();
+
+char* RTC_get_time_hour_string();
+char* RTC_get_time_min_string();
+char* RTC_get_time_sec_string();
+
 
 // These are not hard to do, I just dont need this yet.
 void RTC_set_day(uint8_t day);		// TO DO
